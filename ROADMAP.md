@@ -36,13 +36,21 @@
 - Writing NetworkPolicy YAML from memory (concepts solid, syntax rusty)
 - TLS secret trivia: type `kubernetes.io/tls`, keys `tls.crt`/`tls.key` (lookup-able)
 - Node authorizer vs RBAC distinction — reinforced, recheck later
+- DNS FQDN full form: `<svc>.<ns>.svc.cluster.local` — missing `svc` segment
+- Dual NetworkPolicy pattern (egress on sender + ingress on receiver) — needs reps
+- ClusterRoleBinding vs RoleBinding scope — knows the concept, slipped under pressure
+- Deployment `maxSurge` — recalled `maxUnavailable` but not `maxSurge` unprompted
 
 ## Strengths observed
 - NetworkPolicy AND/OR selector logic — solid
 - Static-pod edit workflow (no `apply`, kubelet reconciles) — solid
 - Ingress pathType Prefix/Exact — solid
+- Pod/Service network distinction (DNAT, pod-to-pod reality) — solid once explained
+- Cluster internals (control plane components, etcd, PKI paths) — strong
+- ServiceAccount linking to pod (`serviceAccountName`, automount) — solid
 
 ## Progress log
 - 2026-07-06 — Kickoff. Profile set. Roadmap created.
 - 2026-07-06 — Verified curriculum vs official sources (k8s v1.35, curriculum v1.34, pass ~66%).
 - 2026-07-06 — Gear-1 sweep of Domain 1 (Cluster Setup) complete: NetworkPolicy, Ingress TLS, kube-bench/CIS, API server + kubelet hardening.
+- 2026-07-17 — k8s foundations brush-up: workloads, networking, RBAC, cluster internals. Concepts intact; syntax gaps noted above.
